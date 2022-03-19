@@ -25,10 +25,10 @@ function checksExistsUserAccount(request, response, next) {
 function checksCreateTodosUserAvailability(request, response, next) {
   const { user } = request;
 
-  const { pro, todos } = user;
+  const {pro, todos} = user;
 
   console.log(pro, todos);
-  
+
   if(!pro && todos.length > 9 ) {
     return response.status(403).json({error: "User reached maximum number of Todos. Time to go Pro!" });
   }
